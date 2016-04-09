@@ -1,0 +1,102 @@
+/* CSS Document */
+
+
+#clubbond-fa{
+    position:absolute;
+	width:100%;
+	left: 0px;
+	top: 0px;
+	height:1000px;
+}
+
+
+
+#clubbond-idbond{
+    position:absolute;
+	width:100%;
+	left: 0%;
+	top: 180px;
+	height:120px;
+	line-height:120px;
+	font-size:15px;
+    border-bottom:1px solid #eee;
+}
+#clubbond-idbondradio{
+    position:relative;
+    float:left;
+	width:20%;
+	left: 0%;
+	top: 0%;
+	height:100%;
+}
+#clubbond-idbondtext{
+    position:relative;
+	width:60%;
+	margin-right:25px;
+	float:right;
+	top: 0%;
+	font-size:15px;
+	height:100%;
+}
+#clubbond-idbondtext td{
+    text-align:right;
+    font-size:15px;
+}
+#clubbond-idbond input[type=text],input[type=password],textarea{border:1px solid #ccc;padding:2px;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,0.1) inset;outline:medium none;line-height:25px;
+    -webkit-transition:all 0.15s ease-in 0s;
+    -moz-transition:all 0.15s ease-in 0s;
+    -o-transition:all 0.15s ease-in 0s;
+    font-family:"Microsoft YaHei",Verdana,Arial;
+    font-size:14px;
+    vertical-align:top;
+	width:350px;
+	padding-left:15px;
+	color:#515151;
+    }
+#clubbond-idbond  input[type=text],input[type=password]{height:35px;}
+#clubbond-idbond    input[type=text]:focus,input[type=password]:focus,textarea:focus{/*border-color:rgba(82,168,236,0.8);*/border-color:#52a8ec;box-shadow:0 1px 2px rgba(0,0,0,0.1) inset,0 0 5px rgba(82,168,236,0.6);outline:0 none;}
+#clubbond-givenbond{
+    position:absolute;
+	width:100%;
+	left: 0%;
+	top: 300px;
+	height:200px;
+	font-size:15px;
+	line-height:200px;
+    border-bottom:1px solid #eee;
+}
+#clubbond-givenbondradio{
+    position:relative;
+	width:20%;
+	float:left;
+	left: 0%;
+	top: 0%;
+	height:100%;
+}
+#clubbond-givenbondtext{
+    position:relative;
+	width:60%;
+	float:right;
+	left: 0;
+	top: 0%;
+	height:100%;
+	font-size:15px;
+	margin-right:25px;
+}
+#clubbond-givenbondtext td{
+    text-align:right;
+    font-size:15px;
+}
+#clubbond-givenbond input[type=text],input[type=password],textarea{border:1px solid #ccc;padding:2px;border-radius:1px;box-shadow:0 1px 2px rgba(0,0,0,0.1) inset;outline:medium none;line-height:25px;
+    -webkit-transition:all 0.15s ease-in 0s;
+    -moz-transition:all 0.15s ease-in 0s;
+    -o-transition:all 0.15s ease-in 0s;
+    font-family:"Microsoft YaHei",Verdana,Arial;
+    font-size:14px;
+    vertical-align:top;
+	width:350px;
+	padding-left:15px;
+	color:#515151;
+    }
+#clubbond-givenbond  input[type=text],input[type=password]{height:35px;}
+#clubbond-givenbond   input[type=text]:focus,input[type=password]:focus,textarea:focus{/*border-color:rgba(82,168,236,0.8);*/border-color:#52a8ec;box-shadow:0 1px 2px rgba(0,0,0,0.1) inset,0 0 5px rgba(82,168,236,0.6);outline:0 none;}

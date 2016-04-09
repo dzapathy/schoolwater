@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="10000000"/> <!-- 设置足够大 -->
+	<!-- 登录 -->
+	<package name="login" extends="struts-default" namespace="/login">
+		<!-- 登录action -->
+		<action name="loginAction" class="com.action.LoginAction">
+			<result name="success" >/login/main.jsp</result>
+		  	<result name="input" >/login/login.jsp</result>
+		  	<result name="renew">/login/renew.jsp</result>
+			<result name="more" >/login/more.jsp</result>
+		</action>
+		
+		<!-- 登录列表action -->
+		<action name="loginListAction" class="com.action.LoginListAction">
+			<result name="success">/login/main.jsp</result>
+			<result name="renew">/login/renew.jsp</result>
+			<result name="input" >/login/login.jsp</result>
+		</action>
+		
+		<!-- 上一页下一页action -->
+		<action name="bulletinPreNextAction" class="com.action.BulletinListAction" method="execute">
+			<result name="success">/login/announce.jsp</result>
+		</action>
+		
+		<!-- 点击公告action -->
+		<action name="bulletinAction" class="com.action.BulletinAction">
+			<result name="input">/login/announcementlist.jsp</result>
+			<result name="success">/login/announcementdetail.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 创建活动 -->
+	<package name="createActivity" extends="struts-default" namespace="/createActivity">
+		<!-- 创建活动action -->
+		<action name="createActivity" class="com.action.CreateActivityAction">		
+			<param name="attachmentSavePath">/upload</param><!-- 附件存储的位置 -->
+			<result name="input">/createActivity/createActivity.jsp</result>
+			<result name="success">/createActivity/success.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<param name="allowTypes">image/bmp,image/png,image/jpeg,application/zip</param>
+				<param name="maximumSize">1024*1024*5</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	
+	<!-- 反馈留言 -->
+	<package name="feedback" extends="struts-default" namespace="/feedback">
+		<!-- 反馈action -->
+		<action name="feedback" class="com.action.FeedbackAction" method="fankui">
+		</action>
+		
+		<!-- 上一页下一页处理action -->
+		<action name="feedbackPreNext" class="com.action.FeedbackListAction" method="execute">
+			<result name="success">/feedback/feedback.jsp</result>
+		</action>	
+	</package>
+		
+	<!-- 活动类型  -->
+	<package name="activityType" extends="struts-default" namespace="/activityType">
+		<!-- 添加或更新活动类型action -->
+		<action name="addType" class="com.action.ActivityTypeAction" method="addType">
+			<result>/activityType/activitytype.jsp</result>
+		</action>
+		
+		<!-- 删除活动类型action -->		
+		<action name="deleteType" class="com.action.ActivityTypeAction" method="deleteType">
+			<result>/activityType/activitytype.jsp</result>
+		</action>	
+	</package>
+	
+	<!-- 修改学校信息 -->
+	<package name="changeSchInfo" extends="struts-default">
+		<!-- 修改信息action -->
+		<action name="changeinfo" class="com.action.ChangeSchInfo" method="changeInfo">
+			<result>/changeSchInfo/changeSchoInfo.jsp</result>
+		</action>
+		
+		<action name="upimg" class="com.action.UploadUtilAction" method="upImg">
+		     <interceptor-ref name="fileUpload">
+             <!-- 限制文件上传格式-->
+             <param name="allowedTypes">image/bmp,image/jpg,image/jpeg,image/png,image/gif,image/pjepg</param>
+             <!-- 限制文件上传大小-->
+             <param name="maximumSize">1024*1024</param>
+             </interceptor-ref>
+             <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="upactimg" class="com.action.UploadUtilAction" method="upactImg">
+		     <interceptor-ref name="fileUpload">
+             <!-- 限制文件上传格式-->
+             <param name="allowedTypes">image/bmp,image/jpg,image/jpeg,image/png,image/gif,image/pjepg</param>
+             <!-- 限制文件上传大小-->
+             <param name="maximumSize">1024*1024</param>
+             </interceptor-ref>
+             <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	
+	
+	<!-- 社团管理 -->
+	<package name="corporationManage" extends="struts-default" namespace="/corporationManage">
+		<!-- 分配账号action -->
+		<action name="corporationManageFenpei" class="com.action.CorporationManageAction" method="fenpei">
+		</action>
+		<!-- 绑定账号action -->		
+		<action name="corporationManageBangding" class="com.action.CorporationManageAction" method="bangding">
+		</action>
+		
+		<!-- 添加或更新社团action -->
+		<action name="addClub" class="com.action.CorporationList" method="addClub">
+			<result name="error">/corporationManage/clubmanage.jsp</result>
+			<result name="success">/corporationManage/clubmanage.jsp</result>
+		</action>
+		<!-- 删除社团action -->
+		<action name="deleteClub" class="com.action.CorporationList" method="deleteClub">
+			<result name="error">/corporationManage/clubmanage.jsp</result>
+			<result name="success">/corporationManage/clubmanage.jsp</result>
+		</action>
+		<!-- 删除管理员 -->
+		<action name="clubManager" class="com.action.ClubManagerAction" method="removeManager">
+			
+		</action>
+		<!-- 获取组织管理员 -->
+		<action name="getClubManager" class="com.action.ClubGetManagerAction" method="getManager">
+		</action>
+	</package>
+	
+	<!-- 表格查看导出 -->
+	<package name="table" extends="struts-default" namespace="/table">	
+		<!-- 上一页action -->
+		<action name="tablePreAction" class="com.action.TableListAction" method="pre">
+			<result name="success">/table/alltable.jsp</result>
+		</action>
+		
+		<!-- 下一页action -->
+		<action name="tableNexAction" class="com.action.TableListAction" method="nex">
+			<result name="success">/table/alltable.jsp</result>
+		</action>
+		
+		<!-- 点击公告action -->
+		<action name="tableContextAction" class="com.action.TableContextAction">
+			<result name="input">/table/alltable.jsp</result>
+			<result name="success">/table/alltableD.jsp</result>
+		</action>
+		
+		<!-- 导出数据表 -->
+		<action name="tableDaoAction" class="com.action.TableContextAction" method="dao">
+			<result name="success">/table/success.jsp</result>
+		</action>
+		
+		<!-- 删除表格 -->
+		<action name="aTableDelete" class="com.action.AllTableDeleteTableAction" method="deleteTable">
+		</action>	
+		
+		<!-- 增加或更新人action -->
+		<action name="addPeaple" class="com.action.OmnipotentTDAction" method="add">
+		</action>
+		
+		<!-- 删除人action -->
+		<action name="deletePeople" class="com.action.OmnipotentTDAction"  method="delete">
+		</action>
+		
+		<!-- 所有表单加载更多 -->
+		<action name="getMore" class="com.action.TableGetMore" method="getMoreData"></action>
+	</package>
+	
+	
+	<!-- 万能表 -->
+	<package name="omnipotent" extends="struts-default" namespace="/omnipotent">
+		<!-- 跳转 -->
+		<action name="omnipotentT" class="com.action.OmnipotentAction">
+			<result name="success">/omnipotent/omnipotentTD.jsp</result>
+		</action>
+		
+		<!-- 增加或更新人action -->
+		<action name="addPeaple" class="com.action.OmnipotentTDAction" method="add">
+		</action>
+		
+		<!-- 删除人action -->
+		<action name="deletePeople" class="com.action.OmnipotentTDAction"  method="delete">
+		</action>
+		
+		<!-- 导出列表 -->
+		<action name="daochu" class="com.action.OminpotentDaoAction">
+			<result name="success">/omnipotent/omnipotentTD.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 活动管理 -->
+	<package name="activityManage" extends="struts-default" namespace="/activityManage">
+		<!-- 上一页下一页action -->
+		<action name="activityPreNextAction" class="com.action.ActivityListAction" method="execute">
+			<result name = "success">/activityManage/activityList.jsp</result>
+		</action>
+		
+		<!-- 点击活动action -->
+		<action name="activityAction" class="com.action.ActivityAction">
+			<result name = "success">/activityManage/activityOptions.jsp</result>
+		</action>
+		
+		<!-- 删除activity的报名人员 -->
+		<action name="activitySignDel" class="com.action.ActivitySignAction" method="del">
+		</action>
+		
+		<!-- 签到 -->
+		<action name="activitySignSign" class="com.action.ActivitySignAction" method="sign">
+		</action>
+		
+		<!-- 导出activitySign -->
+		<action name="activitySignExport" class="com.action.ActivitySignAction" method="export">
+		</action>
+		
+		<!-- 查询签到表 -->
+		<action name="activitySignSearchMore" class="com.action.ActivitySignAction" method="search">
+		</action>
+		
+		<!-- 创建报名表activityCreateT1 -->
+		<action name="activityCreateT1" class = "com.action.ActivityCreateT1" method="create">
+		</action>
+		
+		<!-- 在表中新增成员 或修改已有成员信息-->
+		<action name="activityEnrollAdd" class="com.action.ActivityCreateT1" method="add" >
+		</action>
+		
+		<!-- 删除新信息表中的某条数据 -->
+		<action name="activityEnrollDel" class="com.action.ActivityCreateT1" method="delete">
+		</action>
+		
+		<!-- 导出新信息表 -->
+		<action name="activityEnrollExport" class="com.action.ActivityCreateT1" method="export">
+		</action>
+		
+		<!-- 加载更多成员信息-->
+		<action name="activityGetMoreMember" class="com.action.ActivityGetMoreMember" method="getMore" >
+		</action>
+		<!-- 是否已存在报名表 -->
+		<action name="activityCreateOrNot" class="com.action.ActivityCreateT1" method="createOrNot" >
+		</action>
+		
+		<!-- 发布通知消息 -->
+		<action name="activityNews" class = "com.action.ActivityNewsAction">
+			<result name = "success">/activityManage/success.jsp</result>
+		</action>
+		
+		<!-- 删除Activity -->
+		<action name = "activityDelete" class="com.action.ActivityDeleteAction" method="deleteAct">
+		</action>
+		
+		<!-- 创建一张新的信息表 -->
+		<action name="activityNewTable" class="com.action.ActivityNewTableAction">
+			<result name = "success">/activityManage/activityNewTableDetail.jsp</result>
+		</action>
+		
+		<!-- 导出新信息表 -->
+		<action name="activityNTDetailExport" class="com.action.ActivityNTDetailAction" method="export">
+		</action>
+	
+		<!-- 创建其他表新增 -->
+		<action name="activityNTDetailSave" class="com.action.ActivityNTDetailAction" method="save">
+		</action>
+		
+		<!-- 创建其他表删除 -->
+		<action name="activityNTDetailDel" class="com.action.ActivityNTDetailAction" method="del">
+		</action>
+		
+		<!-- 修改活动 -->
+		<action name="activityUpdate" class="com.action.ActivityUpdateAction">
+			<param name="attachmentSavePath">/upload</param><!-- 附件存储的位置 -->
+			<result name="success">/activityManage/activityNews.jsp</result>
+			<result name="input">/activityManage/activityUpdate.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<param name="allowTypes">image/bmp,image/png,image/jpeg,application/zip</param>
+				<param name="maximumSize">1024*1024*5</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+				
+		<!-- 统计分析 -->
+		<action name="activityCount" class="com.action.ActivityCountAction">
+			<result name="success">/activityManage/countsoloD.jsp</result>
+		</action>
+		
+		<!-- ActivityTeams search-->
+		<action name="activityTeamsSearch" class="com.action.ActivityTeamsAction" method="search">
+		</action>
+		<!-- ActivityTeams delMember -->
+		<action name="activityTeamsDelMember" class="com.action.ActivityTeamsAction" method="delMember">
+		</action>
+		<!-- ActivityTeams del -->
+		<action name="activityTeamsDel" class="com.action.ActivityTeamsAction" method="del">
+		</action>
+	</package>
+		   
+    <!-- 积分管理 -->
+    <package name="grade" extends="struts-default" namespace="/grade">
+    	<!-- 搜索action -->
+    	<action name="search" class="com.action.GradeSearchType" method="searchData">   		
+    	</action>
+    	
+    	<!-- 获取表内容action -->
+    	<action name="getSearchContext" class="com.action.GradeSearchContext">
+    		<result name="input">/grade/gradesearchsolo.jsp</result>
+    		<result name="success">/grade/gradesearchsoloD.jsp</result>
+    	</action>
+    	
+    	<!-- 导出积分表 -->
+    	<action name="jifendao" class="com.action.GradeDao">
+    		<result name="success">/grade/gradesearchsoloD.jsp</result>
+    	</action>
+    	
+    	<!-- 增加或插入积分表数据 -->
+    	<action name="addOrUpdateGrade" class="com.action.GradeEditAction" method="updateOradd">    		
+    	</action>
+    	
+    	<!-- 删除积分表数据 -->
+    	<action name="deleteGrade" class="com.action.GradeEditAction" method="delete">
+    	</action>
+    	
+    	<!-- 导出类型表-->
+    	<action name="typedao" class="com.action.GradeTypeDao">
+    		<result name="success">/grade/gradesearchtype.jsp</result>
+    	</action>
+    	
+    	<!-- 查询活动关联的表 -->
+    	<action name="searchTable" class="com.action.GradeAddAction" method="searchTable">
+    	</action>
+    	
+    	<!-- 查询活动表的人员信息 -->
+    	<action name="searchTableContent" class="com.action.GradeAddAction" method="searchTableContent">
+    	</action>
+    	
+    	<!-- 行为积分表的具体填充数据 -->
+    	<action name="saveActivityIntegral" class="com.action.GradeAddAction" method="save">
+    	</action>
+    	
+    	<!-- 获取单个积分表，加载更多table -->
+    	<action name="searchMoreTable" class="com.action.GradeGetMoreTable" method="getMore"></action>
+    
+    	<!-- 获取更多积分表数据,加载更多 -->
+    	<action name="getMoreGrade" class="com.action.GradeGetMore" method="getMoreData"></action>
+    </package>
+</struts>    

@@ -1,0 +1,38 @@
+/* CSS Document */
+
+body{
+	height:700px;
+}
+#actmanagenewTD-fa{
+    position:absolute;
+	width:1005px;
+	left: 0px;
+	top: 0px;
+	height:700px;
+}
+#actmanagenewTD-title{
+    position:absolute;
+	width:965px;
+	left: 30px;
+	top: 20px;
+	height:20px;
+	border-bottom:1px solid #CCCCCC;
+}
+#actmanagenewTD-dosome{
+    position:absolute;
+	width:965px;
+	left: 30px;
+	top: 50px;
+	height:30px;
+	border-bottom:1px solid #CCCCCC;
+}
+#actmanagenewTD-content{
+    position:absolute;
+	width:965px;
+	left: 30px;
+	top: 100px;
+	height:500px;
+}
+#actmanagenewTD-content td{
+    border:1px dashed #CCCCCC;
+}

@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//WebRoot/activityManage/activityTeams.jsp=UTF-8
+encoding//WebRoot/activityManage/countsoloD.jsp=UTF-8
+encoding//WebRoot/activityManage/ueditor.config.js=UTF-8
+encoding//WebRoot/createActivity/ueditor.all.js=UTF-8
+encoding//WebRoot/createActivity/ueditor.config.js=UTF-8
+encoding//WebRoot/js/actmanageallteam.js=UTF-8
+encoding//WebRoot/js/clubmanage.js=UTF-8
+encoding//WebRoot/js/maxlength.js=UTF-8
+encoding//src/com/action/CreateActivityAction.java=UTF-8
+encoding//src/com/action/LoginAction.java=UTF-8
+encoding//src/com/action/OmnipotentAction.java=UTF-8
+encoding//src/com/qiniu/storage/BucketManager.java=UTF-8
+encoding//src/com/qiniu/storage/ResumeUploader.java=UTF-8
+encoding//src/com/qiniu/storage/UploadManager.java=UTF-8
+encoding//src/com/qiniu/storage/persistent/FileRecorder.java=UTF-8
+encoding//src/com/qiniu/util/Auth.java=UTF-8

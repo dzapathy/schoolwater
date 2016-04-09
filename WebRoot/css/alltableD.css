@@ -1,0 +1,38 @@
+/* CSS Document */
+
+#alltableD-fa{
+	position:absolute;
+	width:100%;
+	left: 0px;
+	top: 10px;
+	height:1000px;
+}
+
+
+ #alltableD-doout{
+    position:relative;
+	text-align:center;
+	margin-left:30%;
+	height:25px;
+	line-height:25px;
+	width:100px;
+    color: #336699;
+	border:1px solid #CCCCCC;
+	font-size:14px;
+}
+#alltableD-doout:hover{
+    background:#E1E1E1;
+	cursor:pointer;
+}
+
+#alltableD-content{
+    position:absolute;
+	width:95%;
+	left: 30px;
+	top: 50px;
+	height:500px;
+	border-bottom:1px solid #CCC;
+}
+#alltableD-content td{
+    border:1px dashed #CCC;
+}

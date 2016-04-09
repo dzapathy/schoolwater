@@ -1,0 +1,18 @@
+/* CSS Document */
+
+#gradewarning-fa{
+    position:absolute;
+	width:100%;
+	left: 0px;
+	top: 0px;
+	height:600px;
+}
+#gradewarning-content{
+    position:absolute;
+	width:80%;
+	left: 10%;
+	top: 100px;
+	height:200px;
+	border:1px dashed #336699;
+	line-height:30px;
+}

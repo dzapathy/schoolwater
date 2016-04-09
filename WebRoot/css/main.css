@@ -1,0 +1,175 @@
+/* CSS Document */
+#inftop {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:5px;
+	z-index:1;
+	background-color:#72b6eb;
+}
+#infmid {
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:80px;
+	z-index:100;
+	background:#FFFFFF;
+	border-bottom:1px solid #D1D1D1;
+}
+#infheadL {
+	position:absolute;
+	left:5%;
+	width:auto;
+	top:10px;
+	height:60px;
+	z-index:1;
+	background-color:#FFFFFF;
+}
+#infheadR {
+	position:absolute;
+	left:85%;
+	top:55px;
+	width:15%;
+	height:15px;
+	z-index:1;
+	background-color:#FFFFFF;
+}
+#inflay1 {
+	position:absolute;
+	left:0px;
+	top:100px;
+	width:100%;
+	height:28px;
+	z-index:1;
+	background-color:#9dc2e2;
+	border-top:1px solid #72b6eb;
+	border-bottom:1px solid #72b6eb;
+}
+#infcontent1{
+    position:absolute;
+	left:0px;
+	top:80px;
+	width:100%;
+	height:1250px;
+	z-index:1;
+	background-color:#f4f4f4;
+	border-bottom:1px solid #ddd;
+}
+
+
+
+#ourlogo{
+    position:absolute;
+	left:40%;
+	top:75%;
+	width:20%;
+	height:8%;
+	z-index:6;
+}
+
+
+.insertLtL{
+    width:30%;
+}
+.insertLtRT{
+    width:70%;
+	color:#515151;
+	font-size:14px;
+}
+.insertLtRC{
+    width:70%;
+	color:#222222;
+	font-size:17px;
+	font-weight:600;
+}
+
+
+
+#infheadM{
+    position:absolute;
+	left:0;
+	top:0px;
+	width:100px;
+	height:80px;
+	z-index:3;
+	background-color:#1C90F2;
+	text-align:center;
+	line-height:80px;
+	color:#FFFFFF;
+	font-size:16px;
+	font-weight:bold;
+}
+#inf-table1{
+}
+#inf-table1 tr{
+    height:20px;
+}
+#infinsertR{
+    position:absolute;
+	margin-left:23%;
+	margin-top:30px;
+	width:75%;
+	height:1190px;
+	z-index:5;
+	background-color:#FFFFFF;
+	border:1px solid #eee;
+	-moz-border-radius:4px;  
+    -webkit-border-radius:4px;  
+    border-radius:4px; 
+}
+#infinsertL{
+    position:absolute;
+	left:0;
+	margin-left:2%;
+	margin-top:30px;
+	width:18%;
+	height:880px;
+	z-index:5;
+	background-color:#FFFFFF;
+	border:1px solid #eee;
+	radius:4px;
+	-moz-border-radius:3px;  
+    -webkit-border-radius:3px;  
+    border-radius:3px;  
+	text-align:left;
+	
+}
+#infend{
+    position:absolute;
+	left:0px;
+	top:1330px;
+	width:100%;
+	height:40px;
+	z-index:1;
+	font-size:12px;
+}
+#end-content{
+    position:absolute;
+	width:40%;
+	left: 30%;
+	top: 30%;
+	height:40%;
+	background-color:#fff;
+	color:#CCC;
+	font-size:12px;
+	text-align:center;
+}
+#end-content table{
+    font-size:12px;
+	text-align:center;
+	color:#C1C1C1;
+}
+.endtext:hover{
+	
+	font-size:12px;
+	text-align:center;
+    color:#1C90F2;
+	cursor:pointer;
+}
+
+a{
+	color:#1C90F2;
+    text-decoration:none;
+}
