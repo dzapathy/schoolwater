@@ -1,0 +1,2 @@
+# schoolwater
+使用struts2开发的面向在校大学生的活动管理系统
